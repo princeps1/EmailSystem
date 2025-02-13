@@ -7,8 +7,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
 
-var databaseProvider = builder.Configuration["DatabaseProvider"];
-var connectionString = builder.Configuration.GetConnectionString(databaseProvider);
+var databaseProvider = builder.Configuration["DatabaseProviderConfiguration:DatabaseProvider"];
+var connectionString = builder.Configuration["DatabaseProviderConfiguration:ConnectionStrings:MailSystemCS"];
 builder.Services.AddDbContext<Context>(options =>
 {
     switch (databaseProvider)
@@ -22,11 +22,11 @@ builder.Services.AddDbContext<Context>(options =>
                 npgsqlOptions.MigrationsAssembly("EmailSystem.Migrations.PostgreSQL"));
             break;
         case "MySQL":
-            options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), mySqlOptions =>
+            options.UseMySql(connectionString, ServerVersion.Parse("8.0.25-mysql"), mySqlOptions =>
                 mySqlOptions.MigrationsAssembly("EmailSystem.Migrations.MySQL"));
             break;
         default:
-            throw new Exception("Nepodržan tip baze: " + databaseProvider);
+            throw new Exception("Nepodrzan tip baze: " + databaseProvider);
     }
 });
 

@@ -10,4 +10,7 @@
     <ProjectReference Include="..\EmailSystem\EmailSystem.csproj" />
   </ItemGroup>
 
+	<PropertyGroup>
+		<BaseOutputPath>..\EmailSystem\bin\</BaseOutputPath>
+	</PropertyGroup>
 </Project>

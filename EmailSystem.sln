@@ -4,11 +4,11 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSystem", "EmailSystem\EmailSystem.csproj", "{D10009F6-4BD0-C3EF-256B-437CBB0A4BED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Migrations.SqlServer", "EmailSystem.Migrations.SqlServer\EmailSystem.Migrations.SqlServer.csproj", "{0B2E01E9-1941-4CE8-B31C-23395A74889B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Migrations.SqlServer", "EmailSystem.Migrations.SqlServer\EmailSystem.Migrations.SqlServer.csproj", "{C4B7F150-16B6-445E-BEF9-0ADB8375C0B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Migrations.PostgreSQL", "EmailSystem.Migrations.PostgreSQL\EmailSystem.Migrations.PostgreSQL.csproj", "{9122B1E2-A11F-4DF1-9DFA-E378D14A62D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Migrations.PostgreSQL", "EmailSystem.Migrations.PostgreSQL\EmailSystem.Migrations.PostgreSQL.csproj", "{6D8CEB4C-64CB-4A7D-B69E-739119672A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Migrations.MySQL", "EmailSystem.Migrations.MySQL\EmailSystem.Migrations.MySQL.csproj", "{FF2D701D-F976-40CE-8602-F2F496F4803B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Migrations.MySQL", "EmailSystem.Migrations.MySQL\EmailSystem.Migrations.MySQL.csproj", "{5059C756-325F-450E-B253-76591CA54793}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,18 +20,18 @@ Global
 		{D10009F6-4BD0-C3EF-256B-437CBB0A4BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D10009F6-4BD0-C3EF-256B-437CBB0A4BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D10009F6-4BD0-C3EF-256B-437CBB0A4BED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B2E01E9-1941-4CE8-B31C-23395A74889B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B2E01E9-1941-4CE8-B31C-23395A74889B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B2E01E9-1941-4CE8-B31C-23395A74889B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B2E01E9-1941-4CE8-B31C-23395A74889B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9122B1E2-A11F-4DF1-9DFA-E378D14A62D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9122B1E2-A11F-4DF1-9DFA-E378D14A62D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9122B1E2-A11F-4DF1-9DFA-E378D14A62D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9122B1E2-A11F-4DF1-9DFA-E378D14A62D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF2D701D-F976-40CE-8602-F2F496F4803B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF2D701D-F976-40CE-8602-F2F496F4803B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF2D701D-F976-40CE-8602-F2F496F4803B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF2D701D-F976-40CE-8602-F2F496F4803B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4B7F150-16B6-445E-BEF9-0ADB8375C0B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4B7F150-16B6-445E-BEF9-0ADB8375C0B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4B7F150-16B6-445E-BEF9-0ADB8375C0B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4B7F150-16B6-445E-BEF9-0ADB8375C0B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D8CEB4C-64CB-4A7D-B69E-739119672A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D8CEB4C-64CB-4A7D-B69E-739119672A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D8CEB4C-64CB-4A7D-B69E-739119672A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D8CEB4C-64CB-4A7D-B69E-739119672A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5059C756-325F-450E-B253-76591CA54793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5059C756-325F-450E-B253-76591CA54793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5059C756-325F-450E-B253-76591CA54793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5059C756-325F-450E-B253-76591CA54793}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
