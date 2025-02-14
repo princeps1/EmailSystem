@@ -5,6 +5,8 @@
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(MailDefinitionProfile));
+
 
 
 var databaseProvider = builder.Configuration["DatabaseProviderConfiguration:DatabaseProvider"];

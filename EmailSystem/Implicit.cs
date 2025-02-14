@@ -8,3 +8,4 @@ global using System.Text.Json;
 
 global using EmailSystem.Data;
 global using EmailSystem.Models;
+global using EmailSystem.Models.DTO;
