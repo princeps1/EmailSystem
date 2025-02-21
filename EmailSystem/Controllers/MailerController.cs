@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 
+
 namespace EmailSystem.Controllers;
 
 [Route("api/[controller]")]
@@ -30,6 +31,6 @@ public class MailerController : ControllerBase
         _context.MailDefinitions.Add(mailDefinition);
         await _context.SaveChangesAsync();
 
-        return Ok("Uspesno ste snimili mail");
+        return Ok("Uspesno ste snimili podatke o mail-u koji treba biti poslat");
     }
 }

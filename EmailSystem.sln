@@ -4,11 +4,13 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSystem", "EmailSystem\EmailSystem.csproj", "{D10009F6-4BD0-C3EF-256B-437CBB0A4BED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Migrations.SqlServer", "EmailSystem.Migrations.SqlServer\EmailSystem.Migrations.SqlServer.csproj", "{C4B7F150-16B6-445E-BEF9-0ADB8375C0B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSystem.Migrations.SqlServer", "EmailSystem.Migrations.SqlServer\EmailSystem.Migrations.SqlServer.csproj", "{C4B7F150-16B6-445E-BEF9-0ADB8375C0B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Migrations.PostgreSQL", "EmailSystem.Migrations.PostgreSQL\EmailSystem.Migrations.PostgreSQL.csproj", "{6D8CEB4C-64CB-4A7D-B69E-739119672A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSystem.Migrations.PostgreSQL", "EmailSystem.Migrations.PostgreSQL\EmailSystem.Migrations.PostgreSQL.csproj", "{6D8CEB4C-64CB-4A7D-B69E-739119672A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Migrations.MySQL", "EmailSystem.Migrations.MySQL\EmailSystem.Migrations.MySQL.csproj", "{5059C756-325F-450E-B253-76591CA54793}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSystem.Migrations.MySQL", "EmailSystem.Migrations.MySQL\EmailSystem.Migrations.MySQL.csproj", "{5059C756-325F-450E-B253-76591CA54793}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Domain", "EmailSystem.Domain\EmailSystem.Domain.csproj", "{ACAEB208-13EF-4342-9D7A-01E493DDFDF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{5059C756-325F-450E-B253-76591CA54793}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5059C756-325F-450E-B253-76591CA54793}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5059C756-325F-450E-B253-76591CA54793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACAEB208-13EF-4342-9D7A-01E493DDFDF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACAEB208-13EF-4342-9D7A-01E493DDFDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACAEB208-13EF-4342-9D7A-01E493DDFDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACAEB208-13EF-4342-9D7A-01E493DDFDF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

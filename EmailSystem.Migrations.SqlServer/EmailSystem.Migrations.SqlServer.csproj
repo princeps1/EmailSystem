@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EmailSystem\EmailSystem.csproj" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmailSystem.Domain\EmailSystem.Domain.csproj" />
   </ItemGroup>
 
 	<PropertyGroup>

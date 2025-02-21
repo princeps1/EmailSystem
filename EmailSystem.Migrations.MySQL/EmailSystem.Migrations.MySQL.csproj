@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EmailSystem\EmailSystem.csproj" />
+	<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmailSystem.Domain\EmailSystem.Domain.csproj" />
   </ItemGroup>
 
 	<PropertyGroup>

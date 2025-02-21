@@ -1,4 +1,4 @@
-﻿namespace EmailSystem.Models.DTO
+﻿namespace EmailSystem.Domain.DTO
 {
     public class MailDefinitionCoreDTO
     {

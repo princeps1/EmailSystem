@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 
-namespace EmailSystem.Models;
+
+namespace EmailSystem.Domain.Entities;
 
 public class MailDefinitionProfile : Profile
 {

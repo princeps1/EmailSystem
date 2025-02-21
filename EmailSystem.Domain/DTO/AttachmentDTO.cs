@@ -1,10 +1,7 @@
-﻿
+﻿namespace EmailSystem.Domain.DTO;
 
-public class Attachment
+public class AttachmentDTO
 {
-    [Key]
-    public int ID { get; set; }
-
     [Required]
     public byte[] Data { get; set; }
 
@@ -15,7 +12,4 @@ public class Attachment
     [Required]
     [MaxLength(255)]
     public string FileName { get; set; }
-
- 
-    public MailDefinition MailDefinition { get; set; }
 }
