@@ -10,7 +10,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSystem.Migrations.Post
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSystem.Migrations.MySQL", "EmailSystem.Migrations.MySQL\EmailSystem.Migrations.MySQL.csproj", "{5059C756-325F-450E-B253-76591CA54793}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Domain", "EmailSystem.Domain\EmailSystem.Domain.csproj", "{ACAEB208-13EF-4342-9D7A-01E493DDFDF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSystem.Domain", "EmailSystem.Domain\EmailSystem.Domain.csproj", "{ACAEB208-13EF-4342-9D7A-01E493DDFDF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrincepsLibrary", "PrincepsLibrary\PrincepsLibrary.csproj", "{7C963EC6-9927-4D49-BE84-48DDA6F98C67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Contracts", "EmailSystem.Contracts\EmailSystem.Contracts.csproj", "{CB09C55F-5693-4C7D-B399-7794D74B52D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSystem.Services", "EmailSystem.Services\EmailSystem.Services.csproj", "{3F05E7A9-2071-4BF1-BB7A-88E4882857C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +44,18 @@ Global
 		{ACAEB208-13EF-4342-9D7A-01E493DDFDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACAEB208-13EF-4342-9D7A-01E493DDFDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACAEB208-13EF-4342-9D7A-01E493DDFDF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C963EC6-9927-4D49-BE84-48DDA6F98C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C963EC6-9927-4D49-BE84-48DDA6F98C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C963EC6-9927-4D49-BE84-48DDA6F98C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C963EC6-9927-4D49-BE84-48DDA6F98C67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB09C55F-5693-4C7D-B399-7794D74B52D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB09C55F-5693-4C7D-B399-7794D74B52D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB09C55F-5693-4C7D-B399-7794D74B52D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB09C55F-5693-4C7D-B399-7794D74B52D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F05E7A9-2071-4BF1-BB7A-88E4882857C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F05E7A9-2071-4BF1-BB7A-88E4882857C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F05E7A9-2071-4BF1-BB7A-88E4882857C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F05E7A9-2071-4BF1-BB7A-88E4882857C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,8 @@
-﻿
-namespace EmailSystem.Services.Implementations;
+﻿using EmailSystem.Contracts;
+using EmailSystem.Domain.Entities;
+using Newtonsoft.Json;
+
+namespace EmailSystem.Services;
 
 public class FileService : IFileService
 {

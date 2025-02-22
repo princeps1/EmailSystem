@@ -7,28 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-	  <PackageReference Include="AutoMapper" Version="14.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.13">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.13">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
 
 
-	<PackageReference Include="Serilog.Extensions.Hosting" Version="9.0.0" />
-	<PackageReference Include="Serilog.Settings.Configuration" Version="9.0.0" />
-	<PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
-
-	<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-
-	<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="7.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EmailSystem.Domain\EmailSystem.Domain.csproj" />
-    <ProjectReference Include="..\EmailSystem.Migrations.MySQL\EmailSystem.Migrations.MySQL.csproj" />
-    <ProjectReference Include="..\EmailSystem.Migrations.PostgreSQL\EmailSystem.Migrations.PostgreSQL.csproj" />
-    <ProjectReference Include="..\EmailSystem.Migrations.SqlServer\EmailSystem.Migrations.SqlServer.csproj" />
+    <ProjectReference Include="..\PrincepsLibrary\PrincepsLibrary.csproj" />
   </ItemGroup>
 
 

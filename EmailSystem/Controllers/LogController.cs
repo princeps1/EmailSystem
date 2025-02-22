@@ -1,4 +1,5 @@
-﻿namespace EmailSystem.Controllers;
+﻿
+namespace EmailSystem.Controllers;
 
 [Route("api/")]
 [ApiController]
@@ -235,7 +236,7 @@ public class LogController : ControllerBase
 
 
                 //var result = _fileService.ProcessFile(fileStream);
-                var result = _fileService.ProcessFileAsString(fileStream,returnOnlyThisLevel);
+                var result = _fileService.ProcessFileAsString(fileStream,returnOnlyThisLevel!);
 
                 
                 return Ok(result);

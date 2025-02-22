@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace PostGreMigrations.Extensions;
+namespace PostgreMigrations.Extensions;
 
 public static class PostgreRegistration
 {

@@ -1,4 +1,4 @@
-﻿namespace EmailSystem.Services.Interfaces;
+﻿namespace EmailSystem.Contracts;
 public interface IFileService
 {
     string ProcessFile(Stream content);
