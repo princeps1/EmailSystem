@@ -1,4 +1,5 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿
+var builder = WebApplication.CreateBuilder(args);
 
 var mailerName = builder.Configuration["MailerName"];
 var logLevel = builder.Configuration["Serilog:MinimumLevel"];
@@ -25,9 +26,29 @@ builder.Services.AddTransient<IFileService, FileService>();
 
 
 
-var databaseProvider = builder.Configuration["DatabaseProviderConfiguration:DatabaseProvider"];
+string? databaseProviderConfig = builder.Configuration["DatabaseProviderConfiguration:DatabaseProvider"];
+if (string.IsNullOrWhiteSpace(databaseProviderConfig))
+{
+    throw new Exception("Konfiguracija za DatabaseProvider je null ili prazna.");
+}
+
+if (!Enum.TryParse<DatabaseProvider>(databaseProviderConfig.Trim(), out DatabaseProvider databaseProviderEnum))
+{
+    throw new Exception("Nepodrzan tip baze.");
+}
+
 var connectionString = builder.Configuration["ConnectionStrings:MailSystemCS"];
-builder.Services.Register<Context>(connectionString!, databaseProvider!);
+if (string.IsNullOrEmpty(connectionString))
+{
+    throw new Exception("Connection string je null ili prazan.");
+}
+builder.Services.Register<Context>(connectionString, databaseProviderEnum.ToString());
+
+
+
+
+
+
 
 var app = builder.Build();
 

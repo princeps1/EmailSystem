@@ -1,5 +1,4 @@
-﻿using MySqlMigrations.Extensions;
-using PostGreMigrations.Extensions;
+﻿
 
 namespace EmailSystem.Services.Implementations;
 public static class RegisterDbContexts
@@ -10,7 +9,7 @@ public static class RegisterDbContexts
         switch (provider.Trim())
         {
             case "SqlServer":
-                SqlServerMigrations.Extensions.SqlServerRegistration.RegisterSqlServerDbContexts<TDbContext>(services, connectionString);
+                SqlServerRegistration.RegisterSqlServerDbContexts<TDbContext>(services, connectionString);
                 break;
             case "PostgreSQL":
                 PostgreRegistration.RegisterPostgreDbContexts<TDbContext>(services, connectionString);

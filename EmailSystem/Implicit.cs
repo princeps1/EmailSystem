@@ -15,3 +15,7 @@ global using EmailSystem.Domain.DTO;
 global using EmailSystem.Domain.Entities;
 global using EmailSystem.Services.Implementations;
 global using EmailSystem.Services.Interfaces;
+
+global using MySqlMigrations.Extensions;
+global using PostGreMigrations.Extensions;
+global using SqlServerMigrations.Extensions;
