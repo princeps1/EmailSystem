@@ -1,6 +1,8 @@
 ﻿using EmailSystem.Contracts;
 using EmailSystem.Domain.Entities;
 using EmailSystem.Services;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 
 namespace PrincepsLibrary.Extensions;
 
@@ -16,7 +18,6 @@ public static class ServiceExtensions
         builder.Services.AddControllers();
         builder.Services.AddSingleton<IFileProvider>(new PhysicalFileProvider(Directory.GetCurrentDirectory()));
         builder.Services.AddAutoMapper(typeof(MailDefinitionProfile));
-
     }
 
     public static void ConfigureCustomServices(this WebApplicationBuilder builder)
@@ -24,5 +25,6 @@ public static class ServiceExtensions
 
         //CUSTOM SERVICES
         builder.Services.AddTransient<IFileService, FileService>();
+        builder.Services.AddTransient<IEmailService, EmailService>();
     }
 }

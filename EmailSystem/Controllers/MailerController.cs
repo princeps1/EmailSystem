@@ -9,11 +9,14 @@ public class MailerController : ControllerBase
 {
     private readonly Context _context;
     private readonly IMapper _mapper;
+    private readonly IEmailService _emailService;
 
-    public MailerController(Context context, IMapper mapper)
+
+    public MailerController(Context context, IMapper mapper, IEmailService emailService)
     {
         _context = context;
         _mapper = mapper;
+        _emailService = emailService;
     }
 
     [HttpPost("Snimi")]
@@ -32,5 +35,16 @@ public class MailerController : ControllerBase
         await _context.SaveChangesAsync();
 
         return Ok("Uspesno ste snimili podatke o mail-u koji treba biti poslat");
+    }
+
+    [HttpPost("Posalji Email")]
+    public async Task<IActionResult> PosaljiEmailAsync(string subject, string toEmail, string username, string message)
+    {
+        if (subject == null || toEmail == null || username == null || message == null)
+        {
+            return BadRequest("Niste uneli sve podatke");
+        }
+        await _emailService.PosaljiEmailAsync(subject, toEmail, username, message);
+        return Ok("Mail je poslat");
     }
 }

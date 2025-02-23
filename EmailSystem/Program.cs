@@ -6,6 +6,10 @@ builder.ConfigureLogging();
 builder.LogConfiguration();
 builder.ConfigureServices();
 builder.ConfigureCustomServices();
+if (!builder.Environment.IsProduction())
+{
+    builder.Configuration.AddUserSecrets<Program>();
+}
 builder.ConfigureDatabase<Context>();
 
 var app = builder.Build();
