@@ -8,7 +8,8 @@ builder.ConfigureServices();
 builder.Services.AddTransient<IFileService, FileService>();
 
 builder.Services.AddTransient<SendGridEmailService>();
-builder.Services.AddTransient<MailTrapEmailService>();
+
+builder.Services.AddHttpClient<MailTrapEmailService>();
 
 builder.Services.AddSingleton<IEmailFactory, EmailFactory>();
 
