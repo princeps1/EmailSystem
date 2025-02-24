@@ -1,15 +1,10 @@
-﻿using EmailSystem.Contracts;
-using Microsoft.Extensions.Configuration;
-using SendGrid;
-using SendGrid.Helpers.Mail;
+﻿namespace EmailSystem.Services.Implementations;
 
-namespace EmailSystem.Services;
-
-public class EmailService : IEmailService
+public class SendGridEmailService : IEmailService
 {
     private readonly IConfiguration _configuration;
 
-    public EmailService(IConfiguration configuration)
+    public SendGridEmailService(IConfiguration configuration)
     {
         _configuration = configuration;
     }

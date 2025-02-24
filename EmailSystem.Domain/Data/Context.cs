@@ -1,4 +1,4 @@
-﻿namespace EmailSystem.Data;
+﻿namespace EmailSystem.Domain.Data;
 
 public class Context : DbContext
 {

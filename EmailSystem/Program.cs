@@ -1,11 +1,20 @@
-﻿using PrincepsLibrary.Extensions;
-
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
 builder.ConfigureLogging();
 builder.LogConfiguration();
 builder.ConfigureServices();
-builder.ConfigureCustomServices();
+
+//CUSTOM SERVICES
+builder.Services.AddTransient<IFileService, FileService>();
+
+builder.Services.AddTransient<SendGridEmailService>();
+builder.Services.AddTransient<MailTrapEmailService>();
+
+builder.Services.AddSingleton<IEmailFactory, EmailFactory>();
+
+builder.Services.AddTransient<EmailService>();
+
+
 if (!builder.Environment.IsProduction())
 {
     builder.Configuration.AddUserSecrets<Program>();

@@ -17,12 +17,10 @@
 	
 	
 	<ItemGroup>
-	  <ProjectReference Include="..\EmailSystem.Contracts\EmailSystem.Contracts.csproj" />
 	  <ProjectReference Include="..\EmailSystem.Domain\EmailSystem.Domain.csproj" />
 	  <ProjectReference Include="..\EmailSystem.Migrations.MySQL\EmailSystem.Migrations.MySQL.csproj" />
 	  <ProjectReference Include="..\EmailSystem.Migrations.PostgreSQL\EmailSystem.Migrations.PostgreSQL.csproj" />
 	  <ProjectReference Include="..\EmailSystem.Migrations.SqlServer\EmailSystem.Migrations.SqlServer.csproj" />
-	  <ProjectReference Include="..\EmailSystem.Services\EmailSystem.Services.csproj" />
 	</ItemGroup>
 
 </Project>

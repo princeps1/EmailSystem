@@ -9,10 +9,10 @@ public class MailerController : ControllerBase
 {
     private readonly Context _context;
     private readonly IMapper _mapper;
-    private readonly IEmailService _emailService;
+    private readonly EmailService _emailService;
 
 
-    public MailerController(Context context, IMapper mapper, IEmailService emailService)
+    public MailerController(Context context, IMapper mapper, EmailService emailService)
     {
         _context = context;
         _mapper = mapper;
@@ -20,31 +20,52 @@ public class MailerController : ControllerBase
     }
 
     [HttpPost("Snimi")]
-    [SwaggerResponse(StatusCodes.Status200OK, "Uspešno snimljen fajl.")]
-    [SwaggerResponse(StatusCodes.Status400BadRequest, "Greška pri snimanju.")]
-    public async Task<IActionResult> Snimi([FromBody] MailDefinitionDTO dto)
+    [SwaggerResponse(StatusCodes.Status200OK, "Uspesno snimljen mail.")]
+    [SwaggerResponse(StatusCodes.Status400BadRequest, "Greska pri snimanju.")]
+    public async Task<IActionResult> SnimiAsync([FromBody] MailDefinitionDTO dto)
     {
-        if (!ModelState.IsValid)
+        try
         {
-            return BadRequest(ModelState);
+            var mailDefinition = _mapper.Map<MailDefinition>(dto);
+
+            _context.MailDefinitions.Add(mailDefinition);
+            await _context.SaveChangesAsync();
+
+           
+            await _emailService.PosaljiEmailAsync(mailDefinition.MailDefinitionCore.Subject,
+                                           mailDefinition.MailDefinitionCore.To,
+                                           mailDefinition.MailDefinitionCore.From!,
+                                           mailDefinition.MailDefinitionCore.ContentText!);
+
+            return Ok("Uspesno ste snimili podatke o mail-u koji treba biti poslat");
         }
-
-        var mailDefinition = _mapper.Map<MailDefinition>(dto);
-
-        _context.MailDefinitions.Add(mailDefinition);
-        await _context.SaveChangesAsync();
-
-        return Ok("Uspesno ste snimili podatke o mail-u koji treba biti poslat");
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        } 
     }
 
-    [HttpPost("Posalji Email")]
-    public async Task<IActionResult> PosaljiEmailAsync(string subject, string toEmail, string username, string message)
-    {
-        if (subject == null || toEmail == null || username == null || message == null)
-        {
-            return BadRequest("Niste uneli sve podatke");
-        }
-        await _emailService.PosaljiEmailAsync(subject, toEmail, username, message);
-        return Ok("Mail je poslat");
-    }
+    //[HttpPost("Posalji Email")]
+    //[SwaggerResponse(StatusCodes.Status200OK, "Uspesno poslat mail.")]
+    //[SwaggerResponse(StatusCodes.Status400BadRequest, "Greska pri slanju.")]
+
+    //public async Task<IActionResult> PosaljiEmailAsync([FromQuery,Required]string subject,  
+    //                                                   [FromQuery, Required] string toEmail, 
+    //                                                   [FromQuery, Required] string username, 
+    //                                                   [FromQuery, Required] string message)
+    //{
+    //    try
+    //    {
+    //        //if (subject == null || toEmail == null || username == null || message == null)
+    //        //{
+    //        //    return BadRequest("Niste uneli sve podatke");
+    //        //}
+    //        await _emailService.PosaljiEmailAsync(subject, toEmail, username, message);
+    //        return Ok("Mail je poslat");
+    //    }
+    //    catch (Exception)
+    //    {
+    //        return BadRequest("Greska pri slanju");
+    //    }
+    //}
 }
