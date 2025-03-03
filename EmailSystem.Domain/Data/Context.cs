@@ -18,13 +18,14 @@ public class Context : DbContext
         modelBuilder.Entity<MailDefinition>()
             .HasMany(m => m.Attachments)
             .WithOne(a => a.MailDefinition)
-            .HasPrincipalKey(m => m.ID);
+            .HasPrincipalKey(m => m.MailDefinitionID);
 
         // Dodavanje inline convertera za property 'ViewModel' koristeći JSON serijalizaciju
-        var converter = new ValueConverter<object, string>(
-            v => System.Text.Json.JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
-            v => System.Text.Json.JsonSerializer.Deserialize<object>(v, (JsonSerializerOptions)null)
+        var converter = new ValueConverter<object?, string>(
+            v => System.Text.Json.JsonSerializer.Serialize(v, (JsonSerializerOptions?)null),
+            v => System.Text.Json.JsonSerializer.Deserialize<object?>(v, (JsonSerializerOptions?)null) ?? new object()
         );
+
 
         modelBuilder.Entity<MailDefinition>()
             .Property(e => e.ViewModel)
