@@ -5,6 +5,7 @@ global using System.ComponentModel.DataAnnotations;
 global using Newtonsoft.Json;
 global using SendGrid;
 global using SendGrid.Helpers.Mail;
+global using Serilog;
 
 
 global using EmailSystem.Domain.Data;

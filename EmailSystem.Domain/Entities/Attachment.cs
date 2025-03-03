@@ -3,7 +3,7 @@
 public class Attachment
 {
     [Key]
-    public int ID { get; set; }
+    public int AttachmentID { get; set; }
 
     [Required]
     public required byte[] Data { get; set; }

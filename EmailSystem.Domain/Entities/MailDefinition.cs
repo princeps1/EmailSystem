@@ -3,7 +3,7 @@
 public class MailDefinition
 {
     [Key]
-    public int ID { get; set; }
+    public int MailDefinitionID { get; set; }
 
 
     [Required]

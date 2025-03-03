@@ -7,13 +7,10 @@ public class MailDefinitionCore
     public string? From { get; set; }
 
     [Required]
-    [EmailAddress]
     public required string To { get; set; }
 
-    [EmailAddress]
     public string? CC { get; set; }
 
-    [EmailAddress]
     public string? BCC { get; set; }
 
     [EmailAddress]
