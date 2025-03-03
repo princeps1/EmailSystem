@@ -1,8 +1,4 @@
-﻿using MySqlMigrations.Extensions;
-using SqlServerMigrations.Extensions;
-using PostgreMigrations.Extensions;
-
-namespace PrincepsLibrary.Extensions;
+﻿namespace PrincepsLibrary.Extensions;
 
 public static class DatabaseExtensions
 {
