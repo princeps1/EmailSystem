@@ -32,10 +32,10 @@ public class MailerController : ControllerBase
             await _context.SaveChangesAsync();
 
            
-            await _emailService.PosaljiEmailAsync(mailDefinition.MailDefinitionCore.Subject,
-                                           mailDefinition.MailDefinitionCore.To,
-                                           mailDefinition.MailDefinitionCore.From!,
-                                           mailDefinition.MailDefinitionCore.ContentText!);
+            //await _emailService.PosaljiEmailAsync(mailDefinition.MailDefinitionCore.Subject,
+            //                               mailDefinition.MailDefinitionCore.To,
+            //                               mailDefinition.MailDefinitionCore.From!,
+            //                               mailDefinition.MailDefinitionCore.ContentText!);
 
             return Ok("Uspesno ste snimili podatke o mail-u koji treba biti poslat");
         }
@@ -45,27 +45,27 @@ public class MailerController : ControllerBase
         } 
     }
 
-    //[HttpPost("Posalji Email")]
-    //[SwaggerResponse(StatusCodes.Status200OK, "Uspesno poslat mail.")]
-    //[SwaggerResponse(StatusCodes.Status400BadRequest, "Greska pri slanju.")]
+    [HttpPost("Posalji Email")]
+    [SwaggerResponse(StatusCodes.Status200OK, "Uspesno poslat mail.")]
+    [SwaggerResponse(StatusCodes.Status400BadRequest, "Greska pri slanju.")]
 
-    //public async Task<IActionResult> PosaljiEmailAsync([FromQuery,Required]string subject,  
-    //                                                   [FromQuery, Required] string toEmail, 
-    //                                                   [FromQuery, Required] string username, 
-    //                                                   [FromQuery, Required] string message)
-    //{
-    //    try
-    //    {
-    //        //if (subject == null || toEmail == null || username == null || message == null)
-    //        //{
-    //        //    return BadRequest("Niste uneli sve podatke");
-    //        //}
-    //        await _emailService.PosaljiEmailAsync(subject, toEmail, username, message);
-    //        return Ok("Mail je poslat");
-    //    }
-    //    catch (Exception)
-    //    {
-    //        return BadRequest("Greska pri slanju");
-    //    }
-    //}
+    public async Task<IActionResult> PosaljiEmailAsync([FromQuery, Required] string subject,
+                                                       [FromQuery, Required] string toEmail,
+                                                       [FromQuery, Required] string username,
+                                                       [FromQuery, Required] string message)
+    {
+        try
+        {
+            //if (subject == null || toEmail == null || username == null || message == null)
+            //{
+            //    return BadRequest("Niste uneli sve podatke");
+            //}
+            await _emailService.PosaljiEmailAsync(subject, toEmail, username, message);
+            return Ok("Mail je poslat");
+        }
+        catch (Exception)
+        {
+            return BadRequest("Greska pri slanju");
+        }
+    }
 }

@@ -13,7 +13,7 @@
 
         public IEmailService CreateEmailService()
         {
-            var providerName = _configuration["MailerName"];
+            var providerName = _configuration["Mailer:Type"];
             if (Enum.TryParse<EmailProvider>(providerName, out var provider))
             {
                 switch (provider)

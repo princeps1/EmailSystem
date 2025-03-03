@@ -9,12 +9,12 @@ public class SendGridEmailService : IEmailService
         _configuration = configuration;
     }
 
-    public async Task PosaljiEmailAsync(string subject,string toEmail,string username,string message)
+    public async Task PosaljiEmailAsync(string subject, string toEmail, string username, string message)
     {
-        var apiKey = _configuration["SendGridApiKey"];
+        var apiKey = _configuration["Mailer:Setup:ApiKey"];
         var client = new SendGridClient(apiKey);
-        var from = new EmailAddress("matejajovic2002@gmail.com", "Princepsdoo");
-        var to = new EmailAddress(toEmail, "Example User");
+        var from = new EmailAddress(_configuration["Mailer:Setup:FromEmail"], _configuration["Mailer:Setup:FromName"]);
+        var to = new EmailAddress(toEmail);
         var plainTextContent = message;
         var htmlContent = "";
         var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);

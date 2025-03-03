@@ -6,31 +6,30 @@ namespace EmailSystem.Services.Implementations
     public class MailTrapEmailService : IEmailService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiToken;
+        private readonly IConfiguration _configuration;
 
         public MailTrapEmailService(HttpClient httpClient, IConfiguration configuration)
         {
             _httpClient = httpClient;
-            _apiToken = configuration["ApiToken"]!; 
+            _configuration = configuration;
         }
 
         public async Task PosaljiEmailAsync(string subject, string toEmail, string username, string message)
         {
             var emailData = new
             {
-                from = new { email = "hello@example.com", name = "Mailtrap Test" },
+                from = new { email = _configuration["Mailer:Setup:FromEmail"], name = _configuration["Mailer:Setup:FromName"] },
                 to = new[] { new { email = toEmail } },
                 subject = subject,
-                text = message,
-                category = "Integration Test"
+                text = message
             };
 
             var jsonContent = new StringContent(JsonConvert.SerializeObject(emailData), Encoding.UTF8, "application/json");
 
             _httpClient.DefaultRequestHeaders.Clear();
-            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiToken}"); 
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_configuration["Mailer:Setup:ApiToken"]}");
 
-            var response = await _httpClient.PostAsync("https://sandbox.api.mailtrap.io/api/send/3483653", jsonContent);
+            var response = await _httpClient.PostAsync(_configuration["Mailer:Setup:Url"], jsonContent);
 
             if (!response.IsSuccessStatusCode)
             {

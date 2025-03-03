@@ -3,7 +3,7 @@
 //CONFIGURE LOGGING
 builder.Host.UseSerilog((context, services, configuration) => configuration
            .ReadFrom.Configuration(context.Configuration));
-var mailerName = builder.Configuration["MailerName"];
+var mailerName = builder.Configuration["Mailer:Type"];
 var logLevel = builder.Configuration["Serilog:MinimumLevel"];
 
 Log.Information("MailerName is {MailerName}.\n", mailerName);
